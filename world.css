@@ -68,7 +68,7 @@ padding-left:10px;
 }
 
 
-button.lookup, button.lookup-cities{
+#lookup, #lookup-cities{
   font-size: 12px;
   text-align: center;
   border-radius: 5px;
@@ -80,16 +80,32 @@ button.lookup, button.lookup-cities{
 
 }
 
-button.lookup{
+#lookup{
   background-color: #3ab3ad;
 }
 
 
- button.lookup-cities{
+#lookup-cities{
   background-color: #4299e1;
 
  }
 
 section.results{
-  padding-left: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-
+    border-collapse: collapse;
+  }
+tr:nth-child(even){
+    background-color: white;
+  }
+
+tr:nth-child(odd){
+    background-color: #f7fafc;
+  }
