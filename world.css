@@ -5,7 +5,7 @@ html{
 }
 
 body{
-  background-color: #f7fafc;
+  background-color: #d6eaf7;
   max-height: 100%;
 }
 
@@ -14,10 +14,11 @@ body{
   max-width: 960px;
 }
 
-header>div.container>img{
+header>div.image>img{
   width: 100px;
   height:100px;
-  float:left;
+  float: left;
+  padding-left:380px; 
 }
 
 header{
@@ -28,6 +29,7 @@ header{
 
 header, h1{
   color:white;
+  padding-right: 200px;
 }
 
 .search{
@@ -96,16 +98,3 @@ section.results{
   align-items: center;
   flex-direction: column;
 }
-
-table, th, td {
-    border: 1px solid black;
-    border-
-    border-collapse: collapse;
-  }
-tr:nth-child(even){
-    background-color: white;
-  }
-
-tr:nth-child(odd){
-    background-color: #f7fafc;
-  }

@@ -11,8 +11,8 @@ function page(){
 
       }
     }
-    xhr.open("GET", "world.php?country="+inputVal);
-    xhr.send();
+        xhr.open("GET", "world.php?country="+inputVal);
+        xhr.send();
   });
 
   document.getElementById("lookup-cities").addEventListener("click", function(){      
@@ -27,8 +27,8 @@ function page(){
 
       }
     }
-  xhr.open("GET", "world.php?country=" + inputVal+ "&context=cities");
-  xhr.send();
+        xhr.open("GET", "world.php?country=" + inputVal+ "&context=cities"); //User can look for the cities in any country they search for
+        xhr.send();
   });
 
 }
