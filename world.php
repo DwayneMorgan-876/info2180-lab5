@@ -18,15 +18,10 @@ $username = 'lab5_user';
 $password = 'password123';
 $dbname = 'world';
 $country = (isset($_GET['country']) ? $_GET['country']:null);
-$context = (isset($_GET['context']) ? $_GET['context']:null);
+// $context = (isset($_GET['context']) ? $_GET['context']:null);
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 
-// $stmt1= $conn->query("SELECT c.name as city, c.district, c.population FROM cities c JOIN countries cs ON c.country_code=cs.code WHERE cs.name like '%$country%'");
-
-// $results = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-
-if (isset($country)==true && isset($GET_['context'])==false){
+if (isset($country)==true && isset($_GET['context'])==false){
 	$stmt = $conn->query("SELECT * FROM countries WHERE name LIKE '%$country%'");
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -46,12 +41,11 @@ if (isset($country)==true && isset($GET_['context'])==false){
 		 echo  	"<td>".$row['independence_year']."</td>";
 		 echo  	"<td>".$row['head_of_state']."</td>";
 		 echo "</tr>";
-		 }  
+		 } 
+		 echo "</table>";
 
-		echo "</table>";
-
-}elseif (isset($country)==true && isset($GET_['context'])==true) {
-	$stmt= $conn->query("SELECT c.name as city, c.district, c.population FROM cities c INNER JOIN countries cs ON c.country_code=cs.code WHERE cs.name LIKE '%$country%'");
+}elseif (isset($country)==true && isset($_GET['context'])==true) {
+	$stmt= $conn->query("SELECT c.name as city, c.district, c.population FROM cities c INNER JOIN countries cs ON c.country_code=cs.code WHERE cs.name LIKE '$country'");
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
@@ -63,14 +57,13 @@ if (isset($country)==true && isset($GET_['context'])==false){
 	</tr>";
 
 	foreach ($results as $row){
-		// echo "<tr><td>" .$row['city']. "</td><td>".$row['district']."</td><td>".$row['population']."</td></tr>";
 		 echo "<tr>";
 		 echo 	"<td>".$row['city']."</td>";
 		 echo  	"<td>".$row['district']."</td>";
 		 echo  	"<td>".$row['population']."</td>";
 		 echo "</tr>";
-	}
-	echo "</table";
+		 }
+		 echo "</table";
 // }else {
 // 	echo "0 Results Found";
 // }

@@ -27,7 +27,7 @@ function page(){
 
       }
     }
-  xhr.open("GET", "world.php?country=" +inputVal+ "&context=lookup-cities");
+  xhr.open("GET", "world.php?country=" + inputVal+ "&context=cities");
   xhr.send();
   });
 
